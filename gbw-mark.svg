@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+<rect width="512" height="512" rx="118" fill="#171717"/>
+<path d="M132 118h248v56H132z" fill="#ff6428" opacity=".92"/>
+<path d="M144 208c44-48 180-48 224 0-8 91-53 164-112 190-59-26-104-99-112-190z" fill="#ff6428"/>
+<path d="M194 228c19-17 43-17 62 0-18 26-44 26-62 0zm62 0c19-17 43-17 62 0-18 26-44 26-62 0z" fill="#171717"/>
+<path d="M205 292c29 23 73 23 102 0-7 41-27 69-51 82-24-13-44-41-51-82z" fill="#171717"/>
+<text x="256" y="157" text-anchor="middle" font-family="Arial,sans-serif" font-size="58" font-weight="900" fill="#171717">GBW</text>
+</svg>
