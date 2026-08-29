@@ -1,0 +1,34 @@
+:root{--bg:#111;--panel:#181818;--grid:#373737;--muted:#aaa;--text:#f3f3f3;--orange:#ff5a1f;--blue:#00b7ef;--green:#57d68d;--yellow:#ffd24a}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,sans-serif}
+.app{max-width:1080px;margin:auto;padding:calc(22px + env(safe-area-inset-top)) calc(18px + env(safe-area-inset-right)) calc(56px + env(safe-area-inset-bottom)) calc(18px + env(safe-area-inset-left))}
+.top{display:flex;justify-content:space-between;gap:24px;align-items:flex-start;padding:6px 4px 2px}
+.kicker{color:#9f9f9f;font-size:12px;letter-spacing:1.6px;font-weight:800}
+.place{font-size:30px;font-weight:850;letter-spacing:-.5px;margin-top:2px}
+.date{color:#9a9a9a;margin-top:4px;font-size:14px}
+.current{text-align:right;min-width:190px}.temp{font-size:58px;line-height:.92;font-weight:880;color:var(--orange);letter-spacing:-2px}
+.feels{font-size:16px;margin-top:7px}.highlow{color:#9f9f9f;font-size:13px;margin-top:4px;line-height:1.35}
+.card{background:linear-gradient(180deg,#191919 0%,#161616 100%);border:1px solid #292929;border-radius:20px;padding:18px;margin-top:14px;box-shadow:0 10px 30px rgba(0,0,0,.16)}.legend{display:flex;gap:10px 18px;flex-wrap:wrap;align-items:center;font-weight:800;font-size:12px;letter-spacing:.3px;margin-bottom:8px;color:#c7c7c7}.dot{display:inline-block;width:15px;height:15px;border-radius:50%;vertical-align:-2px;margin-right:7px}.blue{background:var(--blue)}.orange{background:var(--orange)}
+.chartwrap{position:relative;height:440px;overflow:hidden;border-radius:14px}.chart{width:100%;height:100%}.chart text{fill:#a8a8a8;font-size:12px;font-weight:650}.chart .axis{stroke:#464646;stroke-width:1}.chart .minor{stroke:#323232;stroke-dasharray:4 9}.chart .tempLine{fill:none;stroke:var(--orange);stroke-width:4;stroke-linecap:round;stroke-linejoin:round;filter:drop-shadow(0 0 2px rgba(255,90,31,.22))}.chart .tempFill{fill:url(#tempgrad);opacity:.35}.chart .rainArea{fill:var(--blue);opacity:.30}.chart .rainBar{fill:#78dfff;opacity:.88}.chart .rainPeak{fill:#bdefff;opacity:.95}.chart .cursor{stroke:#fff;stroke-width:2.8;stroke-dasharray:4 4;opacity:.98;filter:drop-shadow(0 0 4px rgba(255,255,255,.55))}.chart .point{fill:#fff;stroke:#111;stroke-width:3}.chart .touchHalo{fill:#fff;opacity:.12}.chart .touchTemp{fill:var(--orange);stroke:#fff;stroke-width:2}.chart .touchRain{fill:var(--blue);stroke:#fff;stroke-width:2}
+.hourtip{background:#1d1d1d;border:1px solid #323232;border-radius:14px;padding:10px 13px;pointer-events:none}.hourtip b{font-size:14px}.hourtip span{display:inline-block;color:#c6c6c6;font-size:12px;margin:3px 12px 0 0}.livebar{min-height:45px;flex:1;margin:0}.scrubrow{display:flex;gap:9px;align-items:stretch;margin-top:10px}.nowreset{min-width:58px;border:1px solid #444;background:#252525;color:#fff;border-radius:14px;font-weight:900;font-size:11px;letter-spacing:.5px;padding:0 12px}.nowreset:active{transform:scale(.97);background:#303030}
+.sun{display:flex;justify-content:space-between;gap:20px;color:#ddd;padding-top:8px}.sun strong{color:#fff}.sun .rise{color:var(--yellow)}
+.sectionhead{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:13px}.sectionnote{font-size:12px;color:#8f8f8f;margin-top:3px}.livepill{font-size:10px;font-weight:900;letter-spacing:.7px;color:#111;background:#eee;border-radius:999px;padding:5px 9px}.metrics{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}.metric{background:#1f1f1f;border:1px solid #2b2b2b;border-radius:14px;padding:13px}.metric small{display:block;color:#8f8f8f;font-weight:800;font-size:10px;letter-spacing:.8px}.metric b{display:block;font-size:19px;margin-top:5px;line-height:1.15}
+.watch{display:flex;gap:13px;align-items:flex-start}.watchIcon{font-size:28px;line-height:1}.watch h3{margin:0 0 5px;font-size:16px;letter-spacing:.2px}.watch p{margin:0;color:#b6b6b6;line-height:1.45;font-size:14px}.good{color:var(--green)}.warn{color:var(--yellow)}
+.days{display:grid;grid-template-columns:repeat(7,1fr);gap:9px}.day{background:#1f1f1f;border:1px solid #2b2b2b;border-radius:14px;padding:12px 8px;text-align:center}.day.active{outline:1px solid #666;background:#242424}.day .dow{font-weight:800}.day .ico{font-size:22px;margin:7px}.day .temps{font-weight:800}.day small{color:#999}
+.status{color:#888;font-size:12px;margin-top:10px}.error{color:#ff7777}
+@media(max-width:700px){.app{padding:14px 12px 40px}.place{font-size:24px}.temp{font-size:45px}.chartwrap{height:360px}.metrics{grid-template-columns:repeat(2,1fr)}.days{grid-template-columns:repeat(6,1fr)}.sun{font-size:13px}.current{text-align:right}}
+.chart{display:block;width:100%;height:100%}
+.fixedScrubber{position:absolute;inset:0;pointer-events:none;z-index:6;display:none}
+.fixedLine{position:absolute;top:34px;bottom:68px;left:50%;width:2px;transform:translateX(-1px);background:repeating-linear-gradient(to bottom,rgba(255,255,255,.98) 0 5px,transparent 5px 10px);filter:drop-shadow(0 0 4px rgba(255,255,255,.55))}
+.fixedLine:before{content:"";position:absolute;inset:0 -4px;background:rgba(255,255,255,.07)}
+.fixedBadge{position:absolute;top:27px;left:50%;transform:translate(-50%,-50%);background:#f2f2f2;color:#111;border-radius:999px;padding:5px 9px;font-size:10px;font-weight:900;letter-spacing:.2px;min-width:44px;text-align:center}
+.brandrow{display:flex;align-items:center;gap:11px}
+.brandmark{width:42px;height:42px;border-radius:12px;background:#1f1f1f;border:1px solid #343434;display:grid;place-items:center;position:relative;flex:0 0 auto;box-shadow:inset 0 0 0 1px rgba(255,90,31,.08)}
+.brandmark span{font-size:13px;font-weight:950;letter-spacing:-.8px;color:#ff6a2b;transform:translateY(-4px)}
+.brandmark i{position:absolute;bottom:5px;font-style:normal;font-size:10px;font-weight:950;color:#f1f1f1;letter-spacing:1px}
+.gbw-embed body{background:transparent}
+.gbw-embed .app{padding-top:10px;padding-bottom:14px}
+.gbw-embed .top{display:none}
+.gbw-embed .status{display:none}
+.gbw-embed .days{margin-bottom:0}
+@media(max-width:700px){.days{display:flex;overflow-x:auto;gap:9px;padding:2px 1px 8px;scrollbar-width:none}.days::-webkit-scrollbar{display:none}.days .day{display:block!important;min-width:112px;flex:0 0 112px}}
+@media(max-width:700px){.chart text{font-size:11px;font-weight:700}.chartwrap{height:390px}.legend{line-height:1.35}.sectionhead{margin-bottom:12px}}
